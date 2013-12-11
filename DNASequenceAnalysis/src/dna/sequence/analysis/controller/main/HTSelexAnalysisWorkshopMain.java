@@ -1,5 +1,6 @@
 package dna.sequence.analysis.controller.main;
 
+
 public class HTSelexAnalysisWorkshopMain {
 
 	public static void main(String[] args) {
@@ -39,21 +40,21 @@ public class HTSelexAnalysisWorkshopMain {
 		String[] tokens = args[0].split("_");
 		UserDecisions.outputTargetDataFile.openForWriting(
 				tokens[0] + "_" + tokens[1] + ".pbm"); // Current requirement for the output is TF_<num>.pbm
-		/*Decisions.outputTargetDataFile.openForWriting(
-		args[0].replace(".pbm", "_motiflen_" + Decisions.motifLength + "_ranked.pbm"));*/
+		/*UserDecisions.outputTargetDataFile.openForWriting(
+				args[0].replace(".pbm", "_motiflen_" + UserDecisions.motifLength + "_ranked.pbm"));*/
 		UserDecisions.outputTargetDataFile.writeDataStructureToFile(UserDecisions.dataStructure);
 		UserDecisions.outputTargetDataFile.close();
 		
 		// Write the result metric to file for future use
 		UserDecisions.outputTargetDataFile.openForWriting(
 				tokens[0] + "_" + tokens[1] + ".metric"); // Current requirement for the output is TF_<num>.metric
-		/*DNAMetric.writeMetricToFile(Decisions.metric,
-		args[0].replace(".pbm", "_motiflen_" + Decisions.motifLength + ".metric"));*/
+		/*DNAMetric.writeMetricToFile(UserDecisions.metric,
+				args[0].replace(".pbm", "_motiflen_" + UserDecisions.motifLength + ".metric"));*/
 		
 		
 		/*// Display the motif logo
 		try {
-			DNAMetric.displayMotif(Decisions.metric);
+			DNAMetric.displayMotif(UserDecisions.metric);
 		} catch (Exception e) {
 			System.out.println(e.getMessage());
 		}*/
