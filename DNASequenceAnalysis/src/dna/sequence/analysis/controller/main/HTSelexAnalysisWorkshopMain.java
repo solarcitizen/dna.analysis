@@ -1,5 +1,7 @@
 package dna.sequence.analysis.controller.main;
 
+import dna.sequence.analysis.model.metrics.DNAMetric;
+
 
 public class HTSelexAnalysisWorkshopMain {
 
@@ -46,7 +48,7 @@ public class HTSelexAnalysisWorkshopMain {
 		UserDecisions.outputTargetDataFile.close();
 		
 		// Write the result metric to file for future use
-		UserDecisions.outputTargetDataFile.openForWriting(
+		DNAMetric.writeMetricToFile(UserDecisions.metric,
 				tokens[0] + "_" + tokens[1] + ".metric"); // Current requirement for the output is TF_<num>.metric
 		/*DNAMetric.writeMetricToFile(UserDecisions.metric,
 				args[0].replace(".pbm", "_motiflen_" + UserDecisions.motifLength + ".metric"));*/
