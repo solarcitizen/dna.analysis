@@ -1,26 +1,29 @@
 package dna.sequence.analysis.controller.main;
 
-import dna.sequence.analysis.controller.strategies.NaiveExhaustiveAnalysisRankingStrategy;
 import dna.sequence.analysis.controller.strategies.RankingStrategy;
+import dna.sequence.analysis.controller.strategies.WeightedEnumerationRankingStrategy;
 import dna.sequence.analysis.model.datastructures.DNAArrayList;
 import dna.sequence.analysis.model.datastructures.DNADataStructure;
 import dna.sequence.analysis.model.files.DNADataFile;
 import dna.sequence.analysis.model.files.HTSelexFile;
 import dna.sequence.analysis.model.files.PBMFile;
 import dna.sequence.analysis.model.metrics.DNAMetric;
-import dna.sequence.analysis.model.metrics.ProbabilityMatrixMetric;
+import dna.sequence.analysis.model.metrics.MotifHashMapMetric;
 
 // Collection of decisions to be made - for easy modification
 public class UserDecisions {
 	
 	// The length of the motif to be searched for
-	public static final int motifLength = 6;
+	public static final int motifLength = 8;
+	
+	// The number of top represented motifs to consider when deriving the PWM
+	public static final int numOfTopMotifsToConsider = 50;
 	
 	// The metric type used by ranking strategy
-	public static final DNAMetric metric = new ProbabilityMatrixMetric();
+	public static final DNAMetric metric = new MotifHashMapMetric();
 	
 	// The ranking strategy of choice
-	public static final RankingStrategy rankingStrategy = new NaiveExhaustiveAnalysisRankingStrategy(metric);
+	public static final RankingStrategy rankingStrategy = new WeightedEnumerationRankingStrategy(metric);
 	
 	// The data structure to be used for scoring and sorting
 	public static final DNADataStructure dataStructure = new DNAArrayList();

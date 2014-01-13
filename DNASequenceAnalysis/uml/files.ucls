@@ -23,7 +23,7 @@
   </class>  
   <class id="3" language="java" name="dna.sequence.analysis.model.files.PBMFile" project="DNASequenceAnalysis" 
     file="/DNASequenceAnalysis/src/dna/sequence/analysis/model/files/PBMFile.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="700" y="510"/>    
+    <position height="-1" width="-1" x="695" y="508"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" accessors="true" 
       visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -31,11 +31,11 @@
     </display>  
   </class>  
   <generalization id="4">    
-    <end type="SOURCE" refId="2"/>    
+    <end type="SOURCE" refId="3"/>    
     <end type="TARGET" refId="1"/>  
   </generalization>  
   <generalization id="5">    
-    <end type="SOURCE" refId="3"/>    
+    <end type="SOURCE" refId="2"/>    
     <end type="TARGET" refId="1"/>  
   </generalization>  
   <classifier-display autosize="true" stereotype="true" package="true" initial-value="true" signature="true" 

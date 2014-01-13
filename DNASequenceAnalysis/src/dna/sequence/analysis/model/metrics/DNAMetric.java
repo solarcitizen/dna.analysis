@@ -32,11 +32,13 @@ public abstract class DNAMetric {
 	// (0 = A, 1 = C, 2 = G, 3 = T) at position i (0 <= i <MOTIFLENGTH)
 	abstract public double[][] toDoubleNormalizedMatrix();
 	
-	abstract public void updateMetricWithMotif(String motif);
+	abstract public void updateMetricWithMotifAndScore(String motif, double motifScore);
+	
+	abstract public double getMotifScore(String motif);
 	
 	// Class service utility for representing the motif logo
 	// Interoperates with a supplied 3rd party library
-	public static final void displayMotif(DNAMetric metric) throws Exception {
+	public static final void displayMotifLogo(DNAMetric metric, String logoName) throws Exception {
 		
 		MotifLogoComponent logos = new MotifLogoComponent();
 		
@@ -65,7 +67,7 @@ public abstract class DNAMetric {
 		logos.addMotif(metric.toDoubleNormalizedMatrix());
 		//logos.addMotif(motif);
 				
-		JFrame guiFrame = new JFrame("Motif Logo");
+		JFrame guiFrame = new JFrame(logoName);
 		guiFrame.add(logos);
 		guiFrame.pack();
 		guiFrame.setVisible(true);

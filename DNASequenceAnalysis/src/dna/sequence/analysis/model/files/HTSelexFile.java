@@ -27,7 +27,7 @@ public class HTSelexFile extends DNADataFile {
 			// Split the line according to format and create a sequence object			
 			String[] sequenceParts = readLine.split("\\t");
 			
-			// HTSelexSequence = sequence string + number of BF occurances
+			// HTSelexSequence = sequence string + number of sequence occurances
 			return new HTSelexSequence(sequenceParts[0],
 				Integer.valueOf(sequenceParts[1]).intValue());
 		}

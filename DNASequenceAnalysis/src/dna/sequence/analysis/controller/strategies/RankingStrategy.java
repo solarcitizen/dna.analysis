@@ -13,11 +13,23 @@ public abstract class RankingStrategy {
 	
 	// The metric generated and used by the ranking strategy
 	protected DNAMetric metric = null;
+	
+	// The metric may be stored in whatever format but for easy calculation we need
+	// the metric to be weighted probability matrix of the specified format:
+	//
+	// metricStructure[i][j] is the probability (or weight) of the j'th base
+	// (0 = A, 1 = C, 2 = G, 3 = T) at position i (0 <= i <MOTIFLENGTH)
+	//
+	// Note: each cell in the matrix is a double
+	protected double[][] positionWeightMatrix = null;
 		
 	public DNAMetric getMetric() {
 		return metric;
 	}
 	
+	public double[][] getPositionWeightMatrix() {
+		return positionWeightMatrix;
+	}
 	
 	abstract public void updateMetricWithSequence(DNASequence sequence);
 	
